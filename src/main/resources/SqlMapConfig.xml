@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<configuration>
+	<environments default="environment">
+		<environment id="environment">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver"	value="oracle.jdbc.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@176.3.13.37:1521:guoxn" />
+				<property name="username" value="sys as sysdba" />
+				<property name="password" value="guoxn" />
+			</dataSource>
+		</environment>
+	</environments>  
+	<!-- 引入 Dept.xml 配置 -->
+	<mappers>
+		
+		<mapper resource="entity/EmpMapper.xml"/>
+	 	
+	</mappers>
+</configuration> 
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Dept.xml 在com.tarena.entity 包中  -->  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ 
+<!-- namespace 的值是 DeptMapper 接口
+  每个Mapper 接口对应一个配置文件  -->
+  
+<mapper namespace="dao.EmpDAO">
+	<insert id="save" parameterType="entity.Emp">
+		INSERT INTO emp 
+		VALUES(id_sequ.nextval,#{name},#{age})
+	</insert>
+	
+	<select id="findAll" resultType="entity.Emp">
+		SELECT * FROM emp
+	</select>
+	
+	<select id="findById" parameterType="int"
+		resultType="entity.Emp">
+		SELECT * FROM emp WHERE id = #{id1}	
+	</select>
+	
+	<update id="modify" parameterType="entity.Emp">
+		UPDATE emp SET name=#{name},age=#{age} WHERE id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM emp WHERE id=#{id}
+	</delete>
+	
+	<select id="findById2" parameterType="int" resultType="map">
+		SELECT * FROM emp WHERE id=#{id}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
